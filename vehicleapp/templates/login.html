@@ -63,9 +63,11 @@
          text-align: center;
          margin-top: 15px;
       }
-      /* Center logo like services page */
       .navbar {
          justify-content: center;
+      }
+      .alert {
+         margin-bottom: 20px;
       }
    </style>
 </head>
@@ -73,7 +75,7 @@
    <!-- header start -->
    <div class="header_section">
       <nav class="navbar navbar-dark bg-dark">
-         <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}"></a>
+         <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
       </nav>
    </div>
    <!-- header end -->
@@ -83,11 +85,13 @@
       <div class="login_box">
          <h1>Login</h1>
          {% if messages %}
-             <ul class="alert alert-warning">
-             {% for message in messages %}
-                 <li>{{ message }}</li>
-             {% endfor %}
-             </ul>
+            <div class="alert alert-warning">
+               <ul>
+               {% for message in messages %}
+                  <li>{{ message }}</li>
+               {% endfor %}
+               </ul>
+            </div>
          {% endif %}
          <form method="POST">
             {% csrf_token %}
@@ -100,7 +104,7 @@
    </div>
    <!-- login section end -->
 
-   <!-- footer start (like services page) -->
+   <!-- footer start -->
    <div class="footer_section layout_padding margin_top_90">
       <div class="container">
          <div class="row">
@@ -115,7 +119,7 @@
                <div class="call_text">Sunday 07:00 to 05:00</div>
             </div>
             <div class="col-lg-3 col-sm-6">
-               <h4 class="footer_taital">social media</h4>
+               <h4 class="footer_taital">SOCIAL MEDIA</h4>
                <div class="social_icon">
                   <ul>
                      <li><a href="#"><img src="{% static 'images/fb-icon.png' %}"></a></li>
@@ -127,7 +131,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                <h4 class="footer_taital">Newsletter</h4>
-               <input type="text" class="enter_text" placeholder="Enter your email" name="Enter your email">
+               <input type="text" class="enter_text" placeholder="Enter your email" name="newsletter_email">
                <div class="subscribe_bt"><a href="#">Subscribe</a></div>
             </div>
          </div>

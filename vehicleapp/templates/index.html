@@ -5,26 +5,14 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- site metas -->
    <title>CARO</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- owl carousel style -->
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css" />
-   <!-- bootstrap css -->
    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-   <!-- style css -->
    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-   <!-- Responsive-->
    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-   <!-- fevicon -->
    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
-   <!-- font-awesome -->
    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-   <!-- owl stylesheets --> 
    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -32,52 +20,46 @@
 
 <body>
    <!--header section start -->
-   <!--header section start -->
-<div class="header_section">
-   <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-         <div class="bg-dark p-4">
-            <div class="menu_main">
-               <ul>
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'services' %}">Services</a></li>
-                  <li><a href="{% url 'clients' %}">Clients</a></li>
-                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
-              </ul>
+   <div class="header_section">
+      <div class="pos-f-t">
+         <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+               <div class="menu_main">
+                  <ul>
+                     <li><a href="{% url 'home' %}">Home</a></li>
+                     <li><a href="{% url 'about' %}">About</a></li>
+                     <li><a href="{% url 'services' %}">Services</a></li>
+                     <li><a href="{% url 'clients' %}">Clients</a></li>
+                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                  </ul>
+               </div>
             </div>
          </div>
+         <nav class="navbar navbar-dark bg-dark d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <a href="{% url 'home' %}" class="ml-3"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+            </div>
+            <div class="d-flex align-items-center">
+               <a href="#" class="mr-3"><img src="{% static 'images/search-icon.png' %}" alt="Search"></a>
+               {% if user.is_authenticated %}
+                  <a href="#" onclick="confirmLogout()" class="text-white mr-3">
+                     <i class="fa fa-user-circle"></i> Logout
+                  </a>
+               {% else %}
+                  <a href="{% url 'login' %}" class="text-white mr-3">
+                     <i class="fa fa-sign-in"></i> Login
+                  </a>
+                  <a href="{% url 'signup' %}" class="text-white">
+                     <i class="fa fa-user-plus"></i> Signup
+                  </a>
+               {% endif %}
+            </div>
+         </nav>
       </div>
-      <nav class="navbar navbar-dark bg-dark d-flex justify-content-between align-items-center">
-         <div class="d-flex align-items-center">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <a href="{% url 'home' %}" class="ml-3"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
-         </div>
-         <div class="d-flex align-items-center">
-            <!-- Search icon -->
-            <a href="#" class="mr-3"><img src="{% static 'images/search-icon.png' %}" alt="Search"></a>
-
-            <!-- Login/Signup or Logout -->
-            {% if user.is_authenticated %}
-               <a href="{% url 'logout' %}" class="text-white mr-3">
-                  <i class="fa fa-user-circle"></i> Logout
-               </a>
-            {% else %}
-               <a href="{% url 'login' %}" class="text-white mr-3">
-                  <i class="fa fa-sign-in"></i> Login
-               </a>
-               <a href="{% url 'signup' %}" class="text-white">
-                  <i class="fa fa-user-plus"></i> Signup
-               </a>
-            {% endif %}
-         </div>
-      </nav>
    </div>
-</div>
-<!--header section end -->
-
    <!--header section end -->
 
    <!-- vehicle section -->
@@ -109,10 +91,10 @@
             </div>
          </div>
          <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-         <i class="fa fa-angle-left"></i>
+            <i class="fa fa-angle-left"></i>
          </a>
          <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-         <i class="fa fa-angle-right"></i>
+            <i class="fa fa-angle-right"></i>
          </a>
       </div>
    </div>
@@ -284,7 +266,7 @@
                <div class="call_text">Sunday  07:00 to 05:00</div>
             </div>
             <div class="col-lg-3 col-sm-6">
-               <h4 class="footer_taital">social media</h4>
+               <h4 class="footer_taital">Social Media</h4>
                <div class="social_icon">
                   <ul>
                      <li><a href="#"><img src="{% static 'images/fb-icon.png' %}"></a></li>
@@ -301,8 +283,7 @@
             </div>
          </div>
          <div class="copyright_section">
-            <h1 class="copyright_text">Copyright 2019 All Right Reserved <a href="https://html.design">Free Html Templates</a>
-            </h1>
+            <h1 class="copyright_text">Copyright 2019 All Right Reserved <a href="https://html.design">Free Html Templates</a></h1>
          </div>
       </div>
    </div>
@@ -320,5 +301,13 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+   <script>
+      function confirmLogout() {
+         if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "{% url 'logout' %}";  // Redirect to the logout URL
+         }
+      }
+   </script>
 </body>
 </html>
