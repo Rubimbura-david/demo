@@ -115,15 +115,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 STATIC_URL = '/static/'
 
 # If your static files are in a different directory, you can specify that here:
 STATICFILES_DIRS = [
     BASE_DIR / 'vehicleapp/static',  # Adjust this if your structure is different
 ]
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ADD THESE LINES AT THE END - ONLY NECESSARY CHANGES
+AUTH_USER_MODEL = 'vehicleapp.CustomUser'
+LOGIN_REDIRECT_URL = 'home'  # Changed from 'dashboard' to 'home'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
