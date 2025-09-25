@@ -17,14 +17,7 @@ def services(request):
     return render(request, 'services.html')
 
 def contact(request):    
-    return render(request, 'contact.html')
-
-<<<<<<< HEAD
-def login(request):    
-    return render(request, 'login.html')
-
-def dashboard(request):    
-=======
+    return render(request, 'contact.html')   
 def signup(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -67,5 +60,4 @@ def logout(request):
 
 @login_required
 def dashboard(request):
->>>>>>> 2d2af42da0903be56fd271bf2974bd36a01301b8
     return render(request, 'dashboard.html')
